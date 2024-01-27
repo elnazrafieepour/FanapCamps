@@ -9,6 +9,8 @@ public class Book {
     public String press;
     public String releaseDate;
     public static Integer saleCount;
+    public Integer price=2000;
+    public String type;
 
     //DefaultConstructor:
     public Book() {
@@ -17,12 +19,14 @@ public class Book {
         this.pageCount = 100;
         this.press = "PressDefaultConstructor";
         this.releaseDate = "ReleaseDateDefaultConstructor";
+        this.type="Physical";
     }
 
     //ParameterizedConstructors:
-    public Book(String title, String author) {
+    public Book(String title, String author, int price) {
         this.title = title;
         this.author = author;
+        this.price=price;
     }
 
     public Book(String title, String author, Integer pageCount) {
@@ -74,11 +78,11 @@ public class Book {
     }
 
     public static void main(String[] args) {
-        Book book = new Book("Math1", "Ross");
+        Book book = new Book("Math1", "Ross", 1000);
         book.checkTitle();
 
         Book book1 = new Book();
-        Book book2 = new Book("eli", "test");
+        Book book2 = new Book("eli", "test", 1000);
         book1.increaseSaleCount();
         book2.printStaticVar();
 

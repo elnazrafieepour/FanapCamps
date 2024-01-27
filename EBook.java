@@ -1,5 +1,5 @@
 public class EBook extends Book {
-    private String type;
+    private String UpdatedDate;
 
     public void convertType(String type) {
         this.type = type;
@@ -8,10 +8,22 @@ public class EBook extends Book {
     public EBook(){
         this.type="ePub";
         this.title="eTitle";
+        this.UpdatedDate="Today";
+        this.price= (int) ((0.80)*price);
     }
+
+    //public void discountPriceForElectronic(int price){
+    //    this.price= (int) ((0.80)*price);
+
+    //}
 
     @Override
     public void print() {
-        System.out.println("the title of your Book is: " + title + " and the author of Book is: " + author + " and the press of Book is: " + press + " and the page count of Book is: " + pageCount + " and the release Date of Book is: " + releaseDate);
+        System.out.println("title is: " + title + " type is: " + type + " Last UpdatedDate is: " + UpdatedDate + " price is: " + price);
+    }
+
+    public static void main(String[] args){
+        EBook eBook1= new EBook();
+        eBook1.print();
     }
 }
