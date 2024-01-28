@@ -1,3 +1,5 @@
+package FanapCamps.Book;
+
 public class EBook extends Book {
     private String UpdatedDate;
 

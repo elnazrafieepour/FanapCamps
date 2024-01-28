@@ -1,3 +1,5 @@
+package FanapCamps;
+
 import java.util.Scanner;
 
 public class TowerOfHanoi {

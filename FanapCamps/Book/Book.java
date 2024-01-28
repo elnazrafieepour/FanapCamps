@@ -1,3 +1,5 @@
+package FanapCamps.Book;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -44,20 +46,20 @@ public class Book {
     }
 
 
-    //Methode: Print Information of Book:
+    //Methode: Print Information of FanapCamps.Book.Book:
     public void print() {
-        System.out.println("the title of your Book is: " + title + " and the author of Book is: " + author + " and the press of Book is: " + press + " and the page count of Book is: " + pageCount + " and the release Date of Book is: " + releaseDate);
+        System.out.println("the title of your FanapCamps.Book.Book is: " + title + " and the author of FanapCamps.Book.Book is: " + author + " and the press of FanapCamps.Book.Book is: " + press + " and the page count of FanapCamps.Book.Book is: " + pageCount + " and the release Date of FanapCamps.Book.Book is: " + releaseDate);
     }
 
-    //Methode for Ckecking equality Input Title and Title of this Book:
+    //Methode for Ckecking equality Input Title and Title of this FanapCamps.Book.Book:
     public void checkTitle() {
         Scanner input = new Scanner(System.in);
         String titleInput = input.next();
         input.close();
         if (Objects.equals(this.title, titleInput))
-            System.out.println("Find Book!");
+            System.out.println("Find FanapCamps.Book.Book!");
         else
-            System.out.println("No Book");
+            System.out.println("No FanapCamps.Book.Book");
     }
 
     //Static Block:
