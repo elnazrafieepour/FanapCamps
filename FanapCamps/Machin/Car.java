@@ -39,9 +39,10 @@ public class Car extends Vehicle {
     }
 
     //Constructors:
-    public void Car(int wheelCount, boolean certificate) {
-        this.wheelCount = wheelCount;
-        this.certificate = certificate;
+    public Car(String type, long model, boolean auto) {
+        super(type);
+        this.model = model;
+        this.auto = auto;
     }
 
     public void Car(int wheelCount, boolean certificate, boolean auto) {
