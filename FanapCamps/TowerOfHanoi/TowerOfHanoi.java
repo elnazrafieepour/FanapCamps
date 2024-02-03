@@ -1,4 +1,4 @@
-package FanapCamps;
+package FanapCamps.TowerOfHanoi;
 
 import java.util.Scanner;
 

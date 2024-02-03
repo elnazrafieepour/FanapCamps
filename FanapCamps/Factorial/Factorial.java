@@ -1,4 +1,4 @@
-package FanapCamps;
+package FanapCamps.Factorial;
 
 import java.math.BigInteger;
 import java.util.Scanner;
