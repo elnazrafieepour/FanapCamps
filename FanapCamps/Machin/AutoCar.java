@@ -4,7 +4,8 @@ public class AutoCar extends Car {
     //properties:
     private boolean gearBoxCVT;
 
-    public AutoCar(boolean gearBoxCVT) {
+    public AutoCar(boolean gearBoxCVT, String type, long model, boolean auto) {
+        super(type, model, auto);
         this.gearBoxCVT = gearBoxCVT;
     }
 
