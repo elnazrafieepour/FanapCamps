@@ -25,7 +25,7 @@ public class Main implements comparison2Array{
         myList2.add(4);
         myList2.add(6);
         myList2.add(7);
-        myList2.add(4);
+        myList2.add(null);
 
         ArrayList<Integer> finalArray= comparison2Array.compare(myList1, myList2);
         System.out.println(finalArray);
