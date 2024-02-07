@@ -1,14 +1,19 @@
 package FanapCamps.Country;
 
 public class Country {
-    private String name;
+    private final String name;
     private String swiftCode;
-    private long population;
+    private final long population;
 
     //Constructor:
     public Country(String name, String swiftCode, long population) {
         this.name = name;
         this.swiftCode = swiftCode;
+        this.population = population;
+    }
+
+    public Country(String name, long population) {
+        this.name = name;
         this.population = population;
     }
 
@@ -23,5 +28,10 @@ public class Country {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return name + ", Population is: " + population;
     }
 }
