@@ -12,13 +12,18 @@ public interface comparison2Array {
                 finalArray.add(e);
                 System.out.println(e);
             }
+            finalArray.addAll(myList2);
+
         } else {
             for (int i = 0; i < myList2.size() ; i++) {
                 int e = myList1.get(i) + myList2.get(i);
                 finalArray.add(e);
+               // finalArray.addAll(myList1);
 
                 System.out.println(e);
             }
+            finalArray.addAll(myList1);
+
         }
 
         return finalArray;

@@ -14,11 +14,7 @@ public class Main implements comparison2Array{
         myList1.add(2);
         myList1.add(3);
         myList1.add(4);
-        myList1.add(5);
-        myList1.add(0);
-        myList1.add(0);
-        myList1.add(6);
-        myList1.add(7);
+
 
         myList2.add(1);
         myList2.add(2);

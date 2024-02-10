@@ -26,6 +26,9 @@ public class Main {
             // System.out.println(entry.toString());
         }
 
+        for (Country entry : newMap.values()) {
+             System.out.println(entry.getName() + " " + entry.getPopulation());
+        }
 
         System.out.println(newMap.get("AUT").getName());
         System.out.println(newMap.get("BLZ").toString());
