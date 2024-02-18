@@ -6,5 +6,10 @@ public interface ChipsNooshidani {
     public int chips = 2000;
     public int nooshidani = 2500;
 
+  //  public ChipsNooshidani (String kenar1, String kenar2){
+    //    this.chips = 2000;
+     //   this.nooshidani = 2500;
+   // }
+
 
 }
