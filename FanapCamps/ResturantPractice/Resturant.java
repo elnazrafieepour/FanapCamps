@@ -43,7 +43,9 @@ public class Resturant {
         for (g=0; g< listItem.length; g++){
             String[] substrings = listItem[g].split(" ");
             if (substrings[0] == Name){
-                removeAllGivenElements(listItem, Name);
+               // removeAllGivenElements(listItem, Name);
+                System.out.println(" ");
+
             } else{
                 System.out.println(" ");
             }
@@ -51,8 +53,9 @@ public class Resturant {
 
         return listItem;
     }
+    /*
     public static String[] removeAllGivenElements(String[] array, String elements) {
         return ArrayUtils.removeElements(array, elements);
     }
-
+*/
 }
