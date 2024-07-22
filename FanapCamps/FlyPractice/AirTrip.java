@@ -4,6 +4,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class AirTrip {
+    /*
     long flyNumber;
     String destination;
     long flyTime;
@@ -39,4 +40,6 @@ public void changeStatus( String newStatus){
         destination= mydestination;
         flyTime= myflyTime;
     }
+
+     */
 }
