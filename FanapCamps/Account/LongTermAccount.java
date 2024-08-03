@@ -1,19 +1,27 @@
 package FanapCamps.Account;
 
-public class LongTermAccount extends Account{
-     @Override
-    public void variz(){
-         System.out.println("you are not allow to variz");
-     }
+public class LongTermAccount extends Account {
     @Override
-    public void Bardasht(){
-        System.out.println("you are not allow to Bardasht");
+    public long variz(long aa) {
+        System.out.println("you are not allow to variz");
+        return 0;
     }
 
     @Override
-    public long soodEveryMonth(){
-        long sood= (long) ((getBalance()*0.20)/12);
-        System.out.println("sood in short term account is: " + this.soodEveryMonth());
+    public long Bardasht(long a) {
+        System.out.println("you are not allow to Bardasht");
+        return 0;
+    }
+
+    @Override
+    public long soodEveryMonth() {
+        long sood = (long) ((getBalance() * 0.20) / 12);
+        System.out.println("sood in long term account is: " + sood);
         return sood;
+    }
+
+    //Constructors:
+    public LongTermAccount(long balance) {
+        super(balance);
     }
 }

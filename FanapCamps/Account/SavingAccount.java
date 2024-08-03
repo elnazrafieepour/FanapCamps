@@ -4,21 +4,11 @@ public class SavingAccount extends Account{
 
     @Override
     public long soodEveryMonth() {
-        long sood= 0;
-        System.out.println("sood in short term account is: " + this.soodEveryMonth());
-        return sood;
+        System.out.println("sood in saving account is: 0 ");
+        return 0;
     }
 
-    @Override
-    public void variz() {
-
-    }
-
-    @Override
-    public void Bardasht() {
-
-    }
-
+@Override
     public long variz(long a) {
         this.setBalance(getBalance() + a);
         System.out.println("variz shod va mojoodi is: " + getBalance());
@@ -33,7 +23,7 @@ public class SavingAccount extends Account{
     }
 
     //Constructors:
-    public void SavingAccount(){
-        this.
+    public SavingAccount(long balance){
+        super(balance);
     }
 }
