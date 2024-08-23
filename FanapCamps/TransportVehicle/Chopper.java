@@ -19,11 +19,17 @@ public class Chopper extends Vehicle implements Fly{
     };
 
     public void VerticalFly() {
-        System.out.println("the AirPlan is Starting...");
+        System.out.println("the AirPlan can Vertical Fly...");
     };
 
+    //Constructor:
     public Chopper(String Brand, FUEL fuel, STATUS Status) {
         super(Brand, fuel);
         this.Status = Status;
     };
+
+    //Getters:
+    public STATUS getStatus() {
+        return Status;
+    }
 }

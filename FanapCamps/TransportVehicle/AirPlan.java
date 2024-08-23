@@ -3,6 +3,7 @@ package FanapCamps.TransportVehicle;
 public class AirPlan extends Vehicle implements Fly {
     STATUS Status;
 
+    //Constructor:
     public AirPlan(String brand, FUEL fuel, STATUS Status) {
         super(brand, fuel);
         this.Status=Status;
@@ -23,4 +24,8 @@ public class AirPlan extends Vehicle implements Fly {
         System.out.println("the AirPlan is Starting...");
     };
 
+    //Getters:
+    public STATUS getStatus() {
+        return Status;
+    }
 }

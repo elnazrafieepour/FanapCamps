@@ -3,6 +3,7 @@ package FanapCamps.TransportVehicle;
 public class Machine extends Vehicle {
     BODY Body;
 
+    //Constructor:
     public Machine(String brand, FUEL fuel, BODY Body) {
         super(brand, fuel);
         this.Body=Body;
@@ -17,5 +18,11 @@ public class Machine extends Vehicle {
     public void Start() {
         System.out.println("the Machine is Starting...");
     };
+
+    //Getters:
+    public BODY getBody() {
+        return Body;
+    }
+
 
 }
