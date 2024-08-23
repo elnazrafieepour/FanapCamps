@@ -2,12 +2,16 @@ package FanapCamps.Account;
 
 public abstract class  Account {
     private long balance;
+    double rateInterest;
     private String name;
+    static int Count=0;
+
 
 //Constructors:
     public Account(long balance, String name){
         this.balance=balance;
         this.name=name;
+        Count++;
     }
     public Account(long balance){
         this.balance=balance;
@@ -28,7 +32,9 @@ public abstract class  Account {
     }
 
     //Sood Methode:
-    public abstract long soodEveryMonth ();
+    public double soodEveryMonth(){
+        return ((this.getBalance()*this.rateInterest)/12);
+    };
 
     public abstract long variz(long a);
 

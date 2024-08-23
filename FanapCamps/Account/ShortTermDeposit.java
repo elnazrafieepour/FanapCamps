@@ -2,6 +2,8 @@ package FanapCamps.Account;
 
 public class ShortTermDeposit extends Account {
 
+    final double rateInterest= 0.10;
+
     @Override
     public long Bardasht(long m) {
         if ((this.getBalance() - m) < 2000) {
@@ -21,16 +23,16 @@ public class ShortTermDeposit extends Account {
     }
 
     @Override
-    public long soodEveryMonth() {
-        long sood= (long) ((getBalance()*0.10)/12);
-        System.out.println("sood in short term account is: " + sood);
-        return sood;
+    public double soodEveryMonth() {
+        System.out.println("sood in short term account is: " + super.soodEveryMonth());
+        return super.soodEveryMonth();
     }
 
 
     //Constructors:
-    public ShortTermDeposit(long balance){
-        super(balance);
+    public ShortTermDeposit(long balance, String name){
+        super(balance, name);
+        super.rateInterest=0.10;
     }
     @Override
     public String getName(){

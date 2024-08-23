@@ -2,8 +2,9 @@ package FanapCamps.Account;
 
 public class SavingAccount extends Account{
 
+
     @Override
-    public long soodEveryMonth() {
+    public double soodEveryMonth() {
         System.out.println("sood in saving account is: 0 ");
         return 0;
     }
@@ -17,13 +18,19 @@ public class SavingAccount extends Account{
 
     @Override
     public long Bardasht(long b) {
-        this.setBalance(getBalance() - b);
-        System.out.println("bardasht shod va mojoodi is: " + getBalance());
+        if(b > this.getBalance()){
+            System.out.println("your Mojoodi is not enouph. ");
+        }else {
+            this.setBalance(getBalance() - b);
+            System.out.println("bardasht shod va mojoodi is: " + getBalance());
+        }
+
         return getBalance();
     }
 
     //Constructors:
-    public SavingAccount(long balance){
-        super(balance);
+    public SavingAccount(long balance, String name){
+        super(balance, name);
+        super.rateInterest=0;
     }
 }
