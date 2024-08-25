@@ -1,5 +1,7 @@
 package FanapCamps.Shape;
 
 public abstract class Shape {
-    public abstract int area();
+    public abstract double calculatePerimeter();
+    public abstract double calculateArea();
+
 }

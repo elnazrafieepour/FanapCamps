@@ -1,24 +1,23 @@
 package FanapCamps.Shape;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        List<Shape> shapes = new ArrayList<>();
 
-        //دریافت ارتفاع و قاعده مثلث از کاربر
-        java.util.Scanner input = new Scanner(System.in);
-        System.out.println("Please Enter the Height And Base of Your Triangle: ");
+        Rectangle rectangle = new Rectangle(3, 5);
+        Circle circle = new Circle(10);
 
-        int height = input.nextInt();
-        int base = input.nextInt();
-        System.out.println("The Height of Triangle is: " + height + " and The Base of its is: " + base);
-        input.close();
+        shapes.add(rectangle);
+        shapes.add(circle);
 
-        Triangle triangle= new Triangle(height, base);
-        System.out.println("The Area of Your Triangle is: " + triangle.area());
-
-        //Practice5-5:
-        triangle.draw();
+        for(Shape shape: shapes) {
+            System.out.println("Shape type: " + shape.getClass().getSimpleName());
+            System.out.println("perimeter: " + shape.calculatePerimeter());
+            System.out.println("area: " + shape.calculateArea());
+        }
 
     }
 }
