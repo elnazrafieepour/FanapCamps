@@ -1,4 +1,4 @@
-package FanapCamps.Gym;
+package FanapCamps.Gym30;
 
 public enum MembershipType {
 

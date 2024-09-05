@@ -1,4 +1,4 @@
-package ExceptionHandling;
+package ExceptionHandling.VowelLetter7;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ExceptionHandling;
+package ExceptionHandling.CreatePerson;
 
 public class LastNameException extends Exception {
     public static String message = "Last name is mandatory";

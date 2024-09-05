@@ -1,4 +1,4 @@
-package ExceptionHandling;
+package ExceptionHandling.CreatePerson;
 
 public class Person {
     private String firstName;

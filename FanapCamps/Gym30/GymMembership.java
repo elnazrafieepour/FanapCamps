@@ -1,17 +1,15 @@
-package FanapCamps.Gym;
-
-import java.util.Date;
+package FanapCamps.Gym30;
 
 public class GymMembership {
     public String MemberName;
     public MembershipType MembershipType;
-    public String Duration;
+    public int Duration;
     public boolean PersonalTrainer = false;
     public boolean SpaAccess = false;
     public long MembershipFee;
 
     //Constructors:
-    public GymMembership(String memberName, FanapCamps.Gym.MembershipType membershipType, String duration, boolean personalTrainer, boolean spaAccess) {
+    public GymMembership(String memberName, FanapCamps.Gym30.MembershipType membershipType, int duration, boolean personalTrainer, boolean spaAccess) {
         MemberName = memberName;
         MembershipType = membershipType;
         Duration = duration;
@@ -19,7 +17,7 @@ public class GymMembership {
         SpaAccess = spaAccess;
     }
 
-    public GymMembership(String memberName, FanapCamps.Gym.MembershipType membershipType, String duration) {
+    public GymMembership(String memberName, FanapCamps.Gym30.MembershipType membershipType, int duration) {
         MemberName = memberName;
         MembershipType = membershipType;
         Duration = duration;
@@ -42,4 +40,9 @@ public class GymMembership {
         return MembershipFee;
     }
 
+    public void DisplayDetail() {
+        System.out.println("The Member with name of : " + this.MemberName + " with duration Membership of: " + this.Duration);
+        System.out.println("And with The Membership Type is : " + this.MembershipType);
+        System.out.println("should be pay the amount of: " + this.calculateMembershipFee());
+    }
     }

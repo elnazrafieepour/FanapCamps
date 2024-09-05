@@ -1,4 +1,9 @@
-package ExceptionHandling;
+package ExceptionHandling.CreatePerson;
+
+import ExceptionHandling.CreatePerson.FirstNameException;
+import ExceptionHandling.CreatePerson.LastNameException;
+import ExceptionHandling.CreatePerson.NationalCodeException;
+import ExceptionHandling.CreatePerson.Person;
 
 import java.util.Scanner;
 

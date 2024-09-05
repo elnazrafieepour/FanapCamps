@@ -1,4 +1,4 @@
-package ExceptionHandling;
+package ExceptionHandling.CreatePerson;
 
 public class NationalCodeException extends Throwable {
     public static String mandatoryMessage = "National code is mandatory";
