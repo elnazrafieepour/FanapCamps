@@ -1,4 +1,4 @@
-package ExceptionHandling.ReadFile;
+package ExceptionHandling.ReadFile5;
 
 public class EmptyFileReadException extends Exception{
     public static String massage= "File is Null";
