@@ -9,7 +9,7 @@ public class Stream {
 
 
 
-          FileOutputStream output = new FileOutputStream("C:\\Users\\admin\\Downloads\\JavaCamp\\NimaGhaferi\\eli.txt");
+          FileOutputStream output = new FileOutputStream("D:\\JavaCamp\\exception1.txt");
           ObjectOutputStream outputStream = new ObjectOutputStream(output);
           outputStream.writeObject(outputStream);
 
@@ -22,7 +22,7 @@ public class Stream {
 
 
         try {
-            FileInputStream input = new FileInputStream("C:\\Users\\admin\\Downloads\\JavaCamp\\NimaGhaferi\\eli.txt");
+            FileInputStream input = new FileInputStream("D:\\JavaCamp\\exception1.txt");
             //FileReader input = new FileReader("C:\\Users\\admin\\Downloads\\JavaCamp\\NimaGhaferi\\eli.txt");
             int i = 0;
             while ((i = input.read()) != -1) {
