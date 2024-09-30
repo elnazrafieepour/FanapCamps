@@ -2,17 +2,30 @@ package FanapCamps.Student;
 
 public class Student {
     private long studentId;
-    private int grade;
+    private String name;
+
+    //Constructor:
+    public Student(long studentId, String name){
+        this.studentId= studentId;
+        this.name= name;
+    }
 
     public long getStudentId() {
         return studentId;
     }
 
-    public int getGrade() {
-        return grade;
+    public String getGrade() {
+        return name;
     }
 
     public void setGrade(int grade) {
-        this.grade = grade;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{id=" + studentId + ", name='" + name + "'}";
     }
 }
+
+
