@@ -27,4 +27,9 @@ public class Field {
     public void setCourseList(List<Course> courseList) {
         this.courseList = courseList;
     }
+
+    @Override
+    public String toString() {
+        return "Field Name: " + name + ", CourseList: " + courseList;
+    }
 }

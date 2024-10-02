@@ -15,9 +15,16 @@ public class Course {
         this.professor = professor;
         this.prerequisite = prerequisite;
     }
-    public Course(String name, List<String> prerequisite) {
+    static List<Course> listcourse= new ArrayList<>();
+
+    public Course(String name, List<Course> prerequisite) {
         this.name = name;
-        this.prerequisite = null;
+        this.prerequisite = new ArrayList<>(prerequisite);
+        listcourse.add(this);
+    }
+    public static List<Course> getCourseList(){
+        System.out.println(listcourse.toString());
+        return listcourse;
     }
 
     public String getName() {
@@ -50,5 +57,14 @@ public class Course {
 
     public void setPrerequisite(List<Course> prerequisite) {
         this.prerequisite = prerequisite;
+    }
+
+    public void addPrerequisite(Course course) {
+        prerequisite.add(course);
+    }
+
+    @Override
+    public String toString() {
+        return "Course Name: " + name + ", Prerequisites: " + prerequisite;
     }
 }

@@ -10,8 +10,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Faculty faculty = defineFaculty(scanner);
+        System.out.println(faculty.getFields());
+        System.out.println(faculty.getName());
 
-       // University university = defineUniversity(scanner);
+        // University university = defineUniversity(scanner);
 
     }
 /*
@@ -43,89 +45,75 @@ public class Main {
                 if (FacultyName.trim().equals("")) {
                     throw new Exception("Invalid Faculty Name");
                 }
-                List<Field> FieldListFaculty= CreateFieldList(scanner);
+                List<Field> FieldListFaculty = CreateFieldList(scanner);
 
 
                 Faculty facultyName = new Faculty(FacultyName, FieldListFaculty);
+                System.out.println(facultyName);
                 return facultyName;
-            } catch (Exception e){
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
     }
 
-    private static List<Field> CreateFieldList(Scanner input){
-        List<Field> FieldList= new ArrayList<>();
+    private static List<Field> CreateFieldList(Scanner input) {
+        List<Field> FieldList = new ArrayList<>();
 
-        while (true){
-
+        while (true) {
             System.out.println("Please enter your Field: ");
-            String Field= input.nextLine();
-
-            if (Field.equalsIgnoreCase("exit")){
+            String Field = input.nextLine();
+            if (Field.equalsIgnoreCase("exit")) {
                 break;
             }
-
-            List<Course> CourseList= CreateCourseList(input);
-            Field newField= new Field(Field, CourseList);
+            List<Course> CourseList = CreateCourseList(input);
+            Field newField = new Field(Field, CourseList);
             FieldList.add(newField);
         }
-        //System.out.println("your Course List is: " + CourseList.toString());
+        System.out.println("your FieldList is: " + FieldList.toString());
         return FieldList;
 
     }
-/*
-    private static Field CreateField(String Field1, Scanner scanner){
-        //String nameField= scanner.nextLine();
-       // List<Course> CourseList= new ArrayList<>();
-/*
-        while (true){
 
-           // String Course= scanner.next();
-            System.out.println("your enter your Course: ");
-
-            if (Course.equalsIgnoreCase("exit")){
+    private static List<Course> CreateCourseList(Scanner name) {
+        List<Course> CourseList = new ArrayList<>();
+        List<Course> PreRequisitList = new ArrayList<>();
+        while (true) {
+            System.out.println("Please Input Your Course Name: ");
+            String CourseName = name.nextLine();
+            if (CourseName.equalsIgnoreCase("exit")) {
                 break;
             }
 
-        System.out.println("Please Input PreRequisit Course for this Course: ");
-        String prerequisiteName=scanner.nextLine();
+            while (true) {
+                List<Course> Courses= Course.getCourseList();
+                System.out.println("Select a course to add prerequisites (input the index): ");
+                int CourseIndex= name.nextInt();
+                Course SelectedCourse= Courses.get(CourseIndex);
 
-        List<Course> course1= CreateCourse(Field1, prerequisiteName);
-       // CourseList.add(course1);
-            Field newField= new Field(Field1, course1);
+                System.out.print("Select prerequisite course (input the index): ");
+                int prerequisiteIndex = name.nextInt();
+                Course prerequisiteCourse = Courses.get(prerequisiteIndex);
 
-        //System.out.println("your Course List is: " + CourseList.toString());
-        return newField;
-    }
+                SelectedCourse.addPrerequisite(prerequisiteCourse);
+/*
+                System.out.println("your enter your preRequisit: ");
+                Course prereq = name.nextLine();
 
-    */
-     private static List<Course> CreateCourseList(Scanner name){
-         System.out.println("Please Input Your Course NAme: ");
-         String CourseName= name.nextLine();
-         List<Course> CourseList= new ArrayList<>();
-         List<String> PreRequisitList= new ArrayList<>();
-
-         while (true){
-
-             String prereq= name.next();
-             System.out.println("your enter your preRequisit: ");
-
-             if (prereq.equalsIgnoreCase("exit")){
-                 break;
-             }
+ */
+                if (prerequisiteCourse.toString().equalsIgnoreCase("exit")) {
+                    break;
+                }
+                PreRequisitList.add(prerequisiteCourse);
+            }
 
 
-             PreRequisitList.add(prereq);
-         }
-
-
-
-         Course newCourse=new Course(CourseName, PreRequisitList);
-         System.out.println("your course is created and this is: " + newCourse.getName());
-         CourseList.add(newCourse);
-         System.out.println(CourseList);
+            Course newCourse = new Course(CourseName, PreRequisitList);
+            System.out.println(newCourse.toString());
+            CourseList.add(newCourse);
+            System.out.println("your course is created and this is: " + newCourse.getName());
+        }
         return CourseList;
-     }
+    }
 
 }
