@@ -1,5 +1,6 @@
 package university.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
@@ -13,6 +14,10 @@ public class Course {
         this.students = students;
         this.professor = professor;
         this.prerequisite = prerequisite;
+    }
+    public Course(String name, List<String> prerequisite) {
+        this.name = name;
+        this.prerequisite = null;
     }
 
     public String getName() {
