@@ -15,6 +15,7 @@ public class Main {
 
     }
 /*
+تتتت
     private static University defineUniversity(Scanner scanner) {
         while (true) {
             try {
