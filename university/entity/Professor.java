@@ -13,6 +13,9 @@ public class Professor extends Person {
         this.level = level;
         this.courseList = courseList;
     }
+    public Professor(String firstName, String lastName, String nationalCode, String entranceYear) {
+        super(firstName, lastName, nationalCode, entranceYear);
+    }
 
     public String getProfessorId() {
         return professorId;
@@ -37,4 +40,10 @@ public class Professor extends Person {
     public void setCourseList(List<Course> courseList) {
         this.courseList = courseList;
     }
+
+    @Override
+    public String toString() {
+        return "Professor Name: " + this.getFirstName() + ", entranceYear: " + this.getEntranceYear();
+    }
 }
+

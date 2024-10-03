@@ -18,6 +18,12 @@ public class Student extends Person {
         this.courseList = courseList;
         this.gradeMap = gradeMap;
     }
+    public Student(String firstName, String lastName, String nationalCode, String entranceYear, String studentId, Field field, Faculty faculty) {
+        super(firstName, lastName, nationalCode, entranceYear);
+        this.studentId = studentId;
+        this.field = field;
+        this.faculty = faculty;
+    }
 
     public String getStudentId() {
         return studentId;
@@ -58,5 +64,10 @@ public class Student extends Person {
 
     public void setGradeMap(Map<Course, Grade> gradeMap) {
         this.gradeMap = gradeMap;
+    }
+
+    @Override
+    public String toString() {
+        return "Student Name: " + this.getFirstName() + ", StudentId: " + this.studentId;
     }
 }

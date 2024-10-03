@@ -10,6 +10,9 @@ public class Faculty {
         this.name = name;
         this.fields = fields;
     }
+    public Faculty(String name) {
+        this.name = name;
+    }
 
 
     public String getName() {

@@ -4,6 +4,7 @@ import university.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -13,9 +14,16 @@ public class Main {
         System.out.println(faculty.getFields());
         System.out.println(faculty.getName());
 
+
+        //تعریف دانشکده:
         // University university = defineUniversity(scanner);
 
+
+
+
     }
+
+
 /*
 
     private static University defineUniversity(Scanner scanner) {
@@ -87,24 +95,41 @@ public class Main {
 
             while (true) {
                 List<Course> Courses= Course.getCourseList();
-                System.out.println("Select a course to add prerequisites (input the index): ");
-                int CourseIndex= name.nextInt();
-                Course SelectedCourse= Courses.get(CourseIndex);
+                System.out.println("would you like add new Course as PreRequisite? ");
+                String select= name.nextLine();
+                //اگر کورسی تا الان تعریف نشده بود، پس نام کورس رو بگیر و برو بصورت کورس تعریفش کن و در پیشنیازهاهم قرارش بده
+                if (Courses.isEmpty() && Objects.equals(select, "yes")){
+                    System.out.println("Please Input Your Course Name as PreRequisite1: ");
+                    String CoursePreReqName = name.nextLine();
+                    if (CoursePreReqName.equalsIgnoreCase("exit")) {
+                        break;
+                    }
+                    Course newPreReqCourse = new Course(CourseName);
+                    System.out.println("Your new Course as PreRequisite add to list of Courses and this is: " + newPreReqCourse.toString());
 
-                System.out.print("Select prerequisite course (input the index): ");
-                int prerequisiteIndex = name.nextInt();
-                Course prerequisiteCourse = Courses.get(prerequisiteIndex);
 
-                SelectedCourse.addPrerequisite(prerequisiteCourse);
-/*
-                System.out.println("your enter your preRequisit: ");
-                Course prereq = name.nextLine();
 
- */
-                if (prerequisiteCourse.toString().equalsIgnoreCase("exit")) {
-                    break;
+                } else //اما اگر پیشنیاز قبلا به عنوان کورس تعریف شده بود پس لیست کورس هارو بگیر و یکیش رو انتخاب کن و در پیشنیاز قرار بده
+                {
+                    System.out.println("Select a course to add prerequisites (input the index): ");
+                    int CourseIndex= name.nextInt();
+                    name.nextLine();
+                    Course SelectedCourse= Courses.get(CourseIndex);
+
+                    System.out.print("Select prerequisite course (input the index): ");
+                    int prerequisiteIndex = name.nextInt();
+                    name.nextLine();
+                    Course prerequisiteCourse = Courses.get(prerequisiteIndex);
+
+                    SelectedCourse.addPrerequisite(prerequisiteCourse);
+
+                    if (prerequisiteCourse.toString().equalsIgnoreCase("exit")) {
+                        break;
+                    }
+                    PreRequisitList.add(prerequisiteCourse);
                 }
-                PreRequisitList.add(prerequisiteCourse);
+
+
             }
 
 

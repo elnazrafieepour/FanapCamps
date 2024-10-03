@@ -22,6 +22,12 @@ public class Course {
         this.prerequisite = new ArrayList<>(prerequisite);
         listcourse.add(this);
     }
+
+    public Course(String name) {
+        this.name = name;
+        listcourse.add(this);
+    }
+
     public static List<Course> getCourseList(){
         System.out.println(listcourse.toString());
         return listcourse;
