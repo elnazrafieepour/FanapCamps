@@ -142,7 +142,7 @@ public class Main {
     }
 
 
-
+/*
     private static void exportStudents(University university) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("D:\\test111111\\students.txt"))){
             String exportData = "";
@@ -203,5 +203,7 @@ public class Main {
             }
         }
 
+
+ */
 
 }
