@@ -141,4 +141,67 @@ public class Main {
         return CourseList;
     }
 
+
+
+    private static void exportStudents(University university) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("D:\\test111111\\students.txt"))){
+            String exportData = "";
+            for(Student student : university.getStudents()) {
+                String studentString = student.toString() + "\n";
+                exportData += studentString;
+            }
+            exportData = exportData.substring(0, exportData.length() - 1);
+            writer.write(exportData);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    private static void loadStudentsFromFile(University university) {
+        File studentsFile = new File("D:\\test111111\\students.txt");
+        try {
+            try (Scanner scanner = new Scanner(studentsFile)) {
+                while (scanner.hasNextLine()) {
+                    String studentString = scanner.nextLine();
+                    String firstname = studentString.split("#")[0];
+                    String lastname = studentString.split("#")[1];
+                    String nationalCode = studentString.split("#")[2];
+                    String entranceYear = studentString.split("#")[3];
+                    Student student = new Student(firstname, lastname, nationalCode, entranceYear);
+                    university.getStudents().add(student);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void removeStudentWithException(Scanner scanner, University university) {
+        while(true) {
+            try {
+                removeStudentByNationalCode(scanner, university);
+                break;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    private static void removeStudentByNationalCode(Scanner scanner, University university) throws Exception {
+        System.out.println("Enter national code to remove:");
+        String nationalCode = scanner.nextLine();
+
+        boolean hasFound = false;
+
+        for (Student student : university.getStudents()) {
+            if (student.getNationalCode().equals(nationalCode)) {
+                hasFound = true;
+                university.getStudents().remove(student);
+                break;
+            }
+        }
+
+
 }
